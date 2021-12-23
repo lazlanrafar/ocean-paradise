@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav-bar></nav-bar>
+
+    <main class="main">
+      <video
+        src="@/assets/img/video.mp4"
+        autoplay
+        loop
+        muted
+        type="mp4"
+      ></video>
+      <img src="@/assets/img/wrapper.jpg" class="wrapper" alt="" />
+      <h2>Ocean</h2>
+
+      <p class="copyright">Copyright © 2021 Latoe</p>
+      <ul class="sosmed">
+        <li>
+          <a href="#"><i class="fas fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-github"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-instagram"></i></a>
+        </li>
+      </ul>
+    </main>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    NavBar: () => import("@/components/NavBar.vue"),
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "@/assets/css/app.scss";
 </style>
