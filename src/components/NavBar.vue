@@ -4,12 +4,12 @@
       <a href="" class="logo">Logo</a>
       <div class="rightSide">
         <div class="btns dayNight" @click="dayNight()" ref="dayNight">
-          <i class="fas fa-sun"></i>
-          <i class="fas fa-moon"></i>
+          <i class="fas fa-sun ic"></i>
+          <i class="fas fa-moon ic"></i>
         </div>
         <div class="btns menuToggle" @click="menuToggle()" ref="menuToggle">
-          <i class="fas fa-bars"></i>
-          <i class="fas fa-times"></i>
+          <i class="fas fa-bars ic"></i>
+          <i class="fas fa-times ic"></i>
         </div>
       </div>
     </header>
@@ -31,6 +31,7 @@ export default {
   methods: {
     dayNight() {
       this.$refs.dayNight.classList.toggle("active");
+      this.$store.state.body.classList.toggle("dark");
     },
     menuToggle() {
       this.$refs.menuToggle.classList.toggle("active");
@@ -39,3 +40,7 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@import "@/assets/css/navbar.scss";
+</style>

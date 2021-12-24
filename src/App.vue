@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" ref="body">
     <nav-bar></nav-bar>
 
     <main class="main">
@@ -34,6 +34,9 @@ export default {
   name: "App",
   components: {
     NavBar: () => import("@/components/NavBar.vue"),
+  },
+  mounted() {
+    this.$store.state.body = this.$refs.body;
   },
 };
 </script>
